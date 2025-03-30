@@ -13,19 +13,47 @@ const Navbar = () => {
         <img src={assets.logo} className="w-32" alt="logo image" />
       </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
-        <NavLink to="/" className="flex flex-col items-center gap-1">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `flex flex-col items-center gap-1 ${
+              isActive ? "text-black font-bold" : "text-gray-700"
+            }`
+          }
+        >
           <p>HOME</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
-        <NavLink to="/collection" className="flex flex-col items-center gap-1">
+        <NavLink
+          to="/collection"
+          className={({ isActive }) =>
+            `flex flex-col items-center gap-1 ${
+              isActive ? "text-black font-bold" : "text-gray-700"
+            }`
+          }
+        >
           <p>COLLECTIONS</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
-        <NavLink to="/about" className="flex flex-col items-center gap-1">
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `flex flex-col items-center gap-1 ${
+              isActive ? "text-black font-bold" : "text-gray-700"
+            }`
+          }
+        >
           <p>ABOUT</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
-        <NavLink to="/contact" className="flex flex-col items-center gap-1">
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `flex flex-col items-center gap-1 ${
+              isActive ? "text-black font-bold" : "text-gray-700"
+            }`
+          }
+        >
           <p>CONTACT</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
