@@ -12,17 +12,17 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body;
     const user = await userModel.findOne({ email });
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.json({ message: "User not found" });
     }
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) {
-      return res.status(401).json({ message: "Invalid password" });
+      return res.json({ message: "Invalid password" });
     }
     if (isValidPassword) {
       const token = createToken(user._id);
       return res.json({ success: true, token });
     } else {
-      res.json({ success: false, message: "Invalid Credentials8" });
+      return res.json({ success: false, message: "Invalid Credentials" });
     }
   } catch (error) {
     console.log(error);
