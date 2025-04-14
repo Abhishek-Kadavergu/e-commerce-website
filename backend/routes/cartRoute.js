@@ -1,12 +1,12 @@
-import expres from "express";
+import express from "express";
 import {
   addToCart,
   updateCart,
   getUserCart,
-} from "../controllers/cartController.js";
+} from "../controllers/cartControllers.js";
 import authUser from "../middlewares/auth.js";
 
-const cartRouter = expres.Router();
+const cartRouter = express.Router();
 
 cartRouter.post("/add", authUser, addToCart);
 cartRouter.post("/get", authUser, getUserCart);
